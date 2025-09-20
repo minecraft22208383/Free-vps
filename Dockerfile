@@ -13,8 +13,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install sshx from Replit GitHub release
-RUN curl -fsSL https://github.com/replit/sshx/releases/latest/download/sshx-linux -o /usr/local/bin/sshx && \
-    chmod +x /usr/local/bin/sshx
+RUN curl -sSf https://sshx.io/get | sh
 
 # Run sshx (this will fail unless a token is provided, for testing run with a command override)
 CMD ["sshx"]
